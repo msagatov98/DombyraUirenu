@@ -1,0 +1,1647 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.*?>
+
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: #242424;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.classes.AppController">
+   <columnConstraints>
+      <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" percentWidth="0.0" prefWidth="60.0" />
+      <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="840.0" />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="600.0" vgrow="SOMETIMES" />
+   </rowConstraints>
+   <children>
+      <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="60.0" style="-fx-background-color: #242424;">
+         <children>
+            <Button fx:id="btnOpenPaneLearnig" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#openPane" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: #242424; -fx-background-radius: 0;" text="L" textFill="WHITE">
+               <font>
+                  <Font size="13.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="10.0" top="10.0" />
+               </VBox.margin>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="btnOpenPaneTuner" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#openPane" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: #303030; -fx-background-radius: 0;" text="T" textFill="WHITE">
+               <font>
+                  <Font size="13.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="10.0" top="10.0" />
+               </VBox.margin>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="btnOpenPaneEmulator" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#openPane" onKeyPressed="#keyPlay" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: #242424; -fx-background-radius: 0;" text="E" textFill="WHITE">
+               <font>
+                  <Font size="13.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="10.0" top="10.0" />
+               </VBox.margin>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: #242424; -fx-background-radius: 0;" text="?" textFill="WHITE">
+               <font>
+                  <Font size="13.0" />
+               </font>
+               <VBox.margin>
+                  <Insets top="290.0" />
+               </VBox.margin>
+            </Button>
+         </children>
+      </VBox>
+      <ImageView fitHeight="600.0" fitWidth="840.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1">
+         <image>
+            <Image url="@../res/images/bg.png" />
+         </image>
+      </ImageView>
+      <GridPane fx:id="paneLearning" visible="false" GridPane.columnIndex="1">
+         <columnConstraints>
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <Button fx:id="btnOpenPaneSongs" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#openPaneMusic" prefHeight="72.0" prefWidth="250.0" style="-fx-background-radius: 3em; -fx-background-color: #E98937;" text="       Ән" textFill="WHITE">
+               <font>
+                  <Font name="Times New Roman Bold Italic" size="32.0" />
+               </font>
+               <graphic>
+                  <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #fff; -fx-background-radius: 10em;">
+                     <graphic>
+                        <ImageView fitHeight="28.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../res/images/icons/musicIcon.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <padding>
+                        <Insets right="2.0" />
+                     </padding>
+                  </Button>
+               </graphic>
+               <padding>
+                  <Insets left="-70.0" />
+               </padding>
+               <GridPane.margin>
+                  <Insets top="50.0" />
+               </GridPane.margin>
+            </Button>
+            <Button fx:id="btnOpenPaneKuis" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#openPaneMusic" prefHeight="72.0" prefWidth="250.0" style="-fx-background-radius: 3em; -fx-background-color: #E98937;" text="       Күй" textFill="WHITE" GridPane.rowIndex="1">
+               <font>
+                  <Font name="Times New Roman Bold Italic" size="32.0" />
+               </font>
+               <graphic>
+                  <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #fff; -fx-background-radius: 10em;">
+                     <graphic>
+                        <ImageView fitHeight="33.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../res/images/icons/ouIcon.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <padding>
+                        <Insets right="2.0" />
+                     </padding>
+                  </Button>
+               </graphic>
+               <padding>
+                  <Insets left="-60.0" />
+               </padding>
+               <GridPane.margin>
+                  <Insets bottom="50.0" />
+               </GridPane.margin>
+            </Button>
+            <ImageView fitHeight="600.0" fitWidth="320.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1">
+               <GridPane.margin>
+                  <Insets top="300.0" />
+               </GridPane.margin>
+               <image>
+                  <Image url="@../res/images/ou.png" />
+               </image>
+            </ImageView>
+         </children>
+      </GridPane>
+      <Pane fx:id="paneMusic" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="840.0" visible="false" GridPane.columnIndex="1">
+         <children>
+            <ImageView fitHeight="600.0" fitWidth="840.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../res/images/songBg-01.png" />
+               </image>
+            </ImageView>
+            <GridPane fx:id="gridPaneSongs" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="450.0" visible="false">
+               <columnConstraints>
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="225.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="225.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <Button fx:id="btnOpenSong0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#openNote" prefHeight="67.5" prefWidth="175.0" style="-fx-background-radius: 3em; -fx-background-color: #C6303F;" text="AxelF" textFill="WHITE">
+                     <font>
+                        <Font name="Times New Roman Bold Italic" size="17.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                     <padding>
+                        <Insets right="-40.0" />
+                     </padding>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button fx:id="btnOpenSong1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#openNote" prefHeight="67.5" prefWidth="175.0" style="-fx-background-radius: 3em; -fx-background-color: #C6303F;" text="Leila" textFill="WHITE" GridPane.columnIndex="1">
+                     <font>
+                        <Font name="Times New Roman Bold Italic" size="17.0" />
+                     </font>
+                     <padding>
+                        <Insets right="-40.0" />
+                     </padding>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button fx:id="btnOpenSong2" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#openNote" prefHeight="67.5" prefWidth="175.0" style="-fx-background-radius: 3em; -fx-background-color: #C6303F;" text="Әнұран" textFill="WHITE" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="Times New Roman Bold Italic" size="17.0" />
+                     </font>
+                     <padding>
+                        <Insets right="-40.0" />
+                     </padding>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button fx:id="btnOpenSong3" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#openNote" prefHeight="67.5" prefWidth="175.0" style="-fx-background-radius: 3em; -fx-background-color: #C6303F;" text="Jingle Bells" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="Times New Roman Bold Italic" size="17.0" />
+                     </font>
+                     <padding>
+                        <Insets right="-40.0" />
+                     </padding>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button fx:id="btnOpenSong4" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#openNote" prefHeight="67.5" prefWidth="175.0" style="-fx-background-radius: 3em; -fx-background-color: #C6303F;" text="Көзімнің &#10; қарасы" textFill="WHITE" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="Times New Roman Bold Italic" size="17.0" />
+                     </font>
+                     <padding>
+                        <Insets right="-40.0" />
+                     </padding>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button fx:id="btnOpenSong5" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#openNote" prefHeight="67.5" prefWidth="175.0" style="-fx-background-radius: 3em; -fx-background-color: #C6303F;" text="Лезгинка" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="Times New Roman Bold Italic" size="17.0" />
+                     </font>
+                     <padding>
+                        <Insets right="-40.0" />
+                     </padding>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button fx:id="btnOpenSong6" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#openNote" prefHeight="67.5" prefWidth="175.0" style="-fx-background-radius: 3em; -fx-background-color: #C6303F;" text="Қазақ қызға &#10;   үйленем" textFill="WHITE" GridPane.rowIndex="3">
+                     <font>
+                        <Font name="Times New Roman Bold Italic" size="17.0" />
+                     </font>
+                     <padding>
+                        <Insets right="-40.0" />
+                     </padding>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button fx:id="btnOpenSong7" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#openNote" prefHeight="67.5" prefWidth="175.0" style="-fx-background-radius: 3em; -fx-background-color: #C6303F;" text="Құстыр &#10;қайтып&#10;барады" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                     <font>
+                        <Font name="Times New Roman Bold Italic" size="17.0" />
+                     </font>
+                     <padding>
+                        <Insets right="-40.0" />
+                     </padding>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button fx:id="btnOpenSong8" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#openNote" prefHeight="67.5" prefWidth="175.0" style="-fx-background-radius: 3em; -fx-background-color: #C6303F;" text="Қыдырып&#10;қайтайық" textFill="WHITE" GridPane.rowIndex="4">
+                     <font>
+                        <Font name="Times New Roman Bold Italic" size="17.0" />
+                     </font>
+                     <padding>
+                        <Insets right="-40.0" />
+                     </padding>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button fx:id="btnOpenSong9" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#openNote" prefHeight="67.5" prefWidth="175.0" style="-fx-background-radius: 3em; -fx-background-color: #C6303F;" text="Whistle" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                     <font>
+                        <Font name="Times New Roman Bold Italic" size="17.0" />
+                     </font>
+                     <padding>
+                        <Insets right="-40.0" />
+                     </padding>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button fx:id="btnPlayAxelF" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#playSong" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #fff; -fx-background-radius: 10em;" textFill="#c6303f">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../res/images/icons/iconPlay.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <GridPane.margin>
+                        <Insets right="105.0" />
+                     </GridPane.margin>
+                  </Button>
+                  <Button fx:id="btnPlayLeila" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#playSong" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #fff; -fx-background-radius: 10em;" textFill="#c6303f" GridPane.columnIndex="1">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../res/images/icons/iconPlay.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <GridPane.margin>
+                        <Insets right="105.0" />
+                     </GridPane.margin>
+                  </Button>
+                  <Button fx:id="btnPlayHymn" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#playSong" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #fff; -fx-background-radius: 10em;" textFill="#c6303f" GridPane.rowIndex="1">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../res/images/icons/iconPlay.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <GridPane.margin>
+                        <Insets right="105.0" />
+                     </GridPane.margin>
+                  </Button>
+                  <Button fx:id="btnPlayJingleBells" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#playSong" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #fff; -fx-background-radius: 10em;" textFill="#c6303f" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../res/images/icons/iconPlay.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <GridPane.margin>
+                        <Insets right="105.0" />
+                     </GridPane.margin>
+                  </Button>
+                  <Button fx:id="btnPlayKozimninQarasy" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#playSong" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #fff; -fx-background-radius: 10em;" textFill="#c6303f" GridPane.rowIndex="2">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../res/images/icons/iconPlay.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <GridPane.margin>
+                        <Insets right="105.0" />
+                     </GridPane.margin>
+                  </Button>
+                  <Button fx:id="btnPlayLezginka" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#playSong" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #fff; -fx-background-radius: 10em;" textFill="#c6303f" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../res/images/icons/iconPlay.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <GridPane.margin>
+                        <Insets right="105.0" />
+                     </GridPane.margin>
+                  </Button>
+                  <Button fx:id="btnPlayQazaqQyz" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#playSong" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #fff; -fx-background-radius: 10em;" textFill="#c6303f" GridPane.rowIndex="3">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../res/images/icons/iconPlay.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <GridPane.margin>
+                        <Insets right="105.0" />
+                     </GridPane.margin>
+                  </Button>
+                  <Button fx:id="btnPlayQustar" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#playSong" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #fff; -fx-background-radius: 10em;" textFill="#c6303f" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../res/images/icons/iconPlay.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <GridPane.margin>
+                        <Insets right="105.0" />
+                     </GridPane.margin>
+                  </Button>
+                  <Button fx:id="btnPlayQydyryp" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#playSong" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #fff; -fx-background-radius: 10em;" textFill="#c6303f" GridPane.rowIndex="4">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../res/images/icons/iconPlay.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <GridPane.margin>
+                        <Insets right="105.0" />
+                     </GridPane.margin>
+                  </Button>
+                  <Button fx:id="btnPlayWhistle" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#playSong" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #fff; -fx-background-radius: 10em;" textFill="#c6303f" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../res/images/icons/iconPlay.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <GridPane.margin>
+                        <Insets right="105.0" />
+                     </GridPane.margin>
+                  </Button>
+               </children>
+            </GridPane>
+            <AnchorPane fx:id="anchorPaneSongs" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="840.0" style="-fx-background-color: #fff;" visible="false">
+               <children>
+                  <VBox fx:id="paneSong0" alignment="TOP_CENTER" prefHeight="200.0" prefWidth="840.0" visible="false">
+                     <children>
+                        <Label alignment="CENTER" contentDisplay="CENTER" text="AxelF" textAlignment="CENTER">
+                           <font>
+                              <Font name="Times New Roman Bold Italic" size="24.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <VBox fx:id="paneSong1" alignment="TOP_CENTER" prefHeight="200.0" prefWidth="840.0" visible="false">
+                     <children>
+                        <Label alignment="CENTER" contentDisplay="CENTER" text="Leila" textAlignment="CENTER">
+                           <font>
+                              <Font name="Times New Roman Bold Italic" size="24.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <VBox fx:id="paneSong2" alignment="TOP_CENTER" prefHeight="200.0" prefWidth="840.0" visible="false">
+                     <children>
+                        <Label alignment="CENTER" contentDisplay="CENTER" text="Әнұран" textAlignment="CENTER">
+                           <font>
+                              <Font name="Times New Roman Bold Italic" size="24.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <VBox fx:id="paneSong3" alignment="TOP_CENTER" prefHeight="200.0" prefWidth="840.0" visible="false">
+                     <children>
+                        <Label alignment="CENTER" contentDisplay="CENTER" text="Jingle Bells" textAlignment="CENTER">
+                           <font>
+                              <Font name="Times New Roman Bold Italic" size="24.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <VBox fx:id="paneSong4" alignment="TOP_CENTER" prefHeight="200.0" prefWidth="840.0" visible="false">
+                     <children>
+                        <Label alignment="CENTER" contentDisplay="CENTER" text="Көзімнің қарасы" textAlignment="CENTER">
+                           <font>
+                              <Font name="Times New Roman Bold Italic" size="24.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <VBox fx:id="paneSong5" alignment="TOP_CENTER" prefHeight="200.0" prefWidth="840.0" visible="false">
+                     <children>
+                        <Label alignment="CENTER" contentDisplay="CENTER" text="Лезгинка" textAlignment="CENTER">
+                           <font>
+                              <Font name="Times New Roman Bold Italic" size="24.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <VBox fx:id="paneSong6" alignment="TOP_CENTER" prefHeight="200.0" prefWidth="840.0" visible="false">
+                     <children>
+                        <Label alignment="CENTER" contentDisplay="CENTER" text="Қазақ қызға үйленем" textAlignment="CENTER">
+                           <font>
+                              <Font name="Times New Roman Bold Italic" size="24.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <VBox fx:id="paneSong7" alignment="TOP_CENTER" prefHeight="200.0" prefWidth="840.0" visible="false">
+                     <children>
+                        <Label alignment="CENTER" contentDisplay="CENTER" text="Құстар қайтып барады" textAlignment="CENTER">
+                           <font>
+                              <Font name="Times New Roman Bold Italic" size="24.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <VBox fx:id="paneSong8" alignment="TOP_CENTER" prefHeight="200.0" prefWidth="840.0" visible="false">
+                     <children>
+                        <Label alignment="CENTER" contentDisplay="CENTER" text="Қыдырып қайтайық" textAlignment="CENTER">
+                           <font>
+                              <Font name="Times New Roman Bold Italic" size="24.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <VBox fx:id="paneSong9" alignment="TOP_CENTER" prefHeight="200.0" prefWidth="840.0" visible="false">
+                     <children>
+                        <Label alignment="CENTER" contentDisplay="CENTER" text="Whistle" textAlignment="CENTER">
+                           <font>
+                              <Font name="Times New Roman Bold Italic" size="24.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+            <GridPane fx:id="gridPaneKuis" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="450.0" visible="false">
+               <columnConstraints>
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="225.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="225.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <Button fx:id="btnOpenKui0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#openNote" prefHeight="67.5" prefWidth="175.0" style="-fx-background-radius: 3em; -fx-background-color: #C6303F;" text="Сарыарқа" textFill="WHITE">
+                     <font>
+                        <Font name="Times New Roman Bold Italic" size="17.0" />
+                     </font>
+                     <padding>
+                        <Insets right="-40.0" />
+                     </padding>
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button fx:id="btnOpenKui1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#openNote" prefHeight="67.5" prefWidth="175.0" style="-fx-background-radius: 3em; -fx-background-color: #C6303F;" text="Көроғлы" textFill="WHITE" GridPane.columnIndex="1">
+                     <font>
+                        <Font name="Times New Roman Bold Italic" size="17.0" />
+                     </font>
+                     <padding>
+                        <Insets right="-40.0" />
+                     </padding>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button fx:id="btnOpenKui2" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#openNote" prefHeight="67.5" prefWidth="175.0" style="-fx-background-radius: 3em; -fx-background-color: #C6303F;" text="Кеңес" textFill="WHITE" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="Times New Roman Bold Italic" size="17.0" />
+                     </font>
+                     <padding>
+                        <Insets right="-40.0" />
+                     </padding>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button fx:id="btnOpenKui3" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#openNote" prefHeight="67.5" prefWidth="175.0" style="-fx-background-radius: 3em; -fx-background-color: #C6303F;" text="Көңіл ашар" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="Times New Roman Bold Italic" size="17.0" />
+                     </font>
+                     <padding>
+                        <Insets right="-40.0" />
+                     </padding>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button fx:id="btnOpenKui4" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#openNote" prefHeight="67.5" prefWidth="175.0" style="-fx-background-radius: 3em; -fx-background-color: #C6303F;" text="Адай" textFill="WHITE" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="Times New Roman Bold Italic" size="17.0" />
+                     </font>
+                     <padding>
+                        <Insets right="-40.0" />
+                     </padding>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button fx:id="btnOpenKui5" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#openNote" prefHeight="67.5" prefWidth="175.0" style="-fx-background-radius: 3em; -fx-background-color: #C6303F;" text="Балбырауын" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="Times New Roman Bold Italic" size="17.0" />
+                     </font>
+                     <padding>
+                        <Insets right="-40.0" />
+                     </padding>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button fx:id="btnOpenKui6" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#openNote" prefHeight="67.5" prefWidth="175.0" style="-fx-background-radius: 3em; -fx-background-color: #C6303F;" text="Жұмыр &#10;қылыш" textFill="WHITE" GridPane.rowIndex="3">
+                     <font>
+                        <Font name="Times New Roman Bold Italic" size="17.0" />
+                     </font>
+                     <padding>
+                        <Insets right="-40.0" />
+                     </padding>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button fx:id="btnOpenKui7" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#openNote" prefHeight="67.5" prefWidth="175.0" style="-fx-background-radius: 3em; -fx-background-color: #C6303F;" text="   Ата &#10;толғауы" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                     <font>
+                        <Font name="Times New Roman Bold Italic" size="17.0" />
+                     </font>
+                     <padding>
+                        <Insets right="-40.0" />
+                     </padding>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button fx:id="btnOpenKui8" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#openNote" prefHeight="67.5" prefWidth="175.0" style="-fx-background-radius: 3em; -fx-background-color: #C6303F;" text="   Ерке &#10;сылқым" textFill="WHITE" GridPane.rowIndex="4">
+                     <font>
+                        <Font name="Times New Roman Bold Italic" size="17.0" />
+                     </font>
+                     <padding>
+                        <Insets right="-40.0" />
+                     </padding>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button fx:id="btnOpenKui9" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#openNote" prefHeight="67.5" prefWidth="175.0" style="-fx-background-radius: 3em; -fx-background-color: #C6303F;" text="Әлқиса" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                     <font>
+                        <Font name="Times New Roman Bold Italic" size="17.0" />
+                     </font>
+                     <padding>
+                        <Insets right="-40.0" />
+                     </padding>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button fx:id="btnPlaySaryarqa" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#playKui" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #fff; -fx-background-radius: 10em;" textFill="#c6303f">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../res/images/icons/iconPlay.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <GridPane.margin>
+                        <Insets right="105.0" />
+                     </GridPane.margin>
+                  </Button>
+                  <Button fx:id="btnPlayKorogly" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#playKui" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #fff; -fx-background-radius: 10em;" textFill="#c6303f" GridPane.columnIndex="1">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../res/images/icons/iconPlay.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <GridPane.margin>
+                        <Insets right="105.0" />
+                     </GridPane.margin>
+                  </Button>
+                  <Button fx:id="btnPlayKenes" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#playKui" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #fff; -fx-background-radius: 10em;" textFill="#c6303f" GridPane.rowIndex="1">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../res/images/icons/iconPlay.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <GridPane.margin>
+                        <Insets right="105.0" />
+                     </GridPane.margin>
+                  </Button>
+                  <Button fx:id="btnPlayKonilAshar" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#playKui" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #fff; -fx-background-radius: 10em;" textFill="#c6303f" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../res/images/icons/iconPlay.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <GridPane.margin>
+                        <Insets right="105.0" />
+                     </GridPane.margin>
+                  </Button>
+                  <Button fx:id="btnPlayAdai" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#playKui" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #fff; -fx-background-radius: 10em;" textFill="#c6303f" GridPane.rowIndex="2">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../res/images/icons/iconPlay.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <GridPane.margin>
+                        <Insets right="105.0" />
+                     </GridPane.margin>
+                  </Button>
+                  <Button fx:id="btnPlayBalbyrauyn" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#playKui" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #fff; -fx-background-radius: 10em;" textFill="#c6303f" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../res/images/icons/iconPlay.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <GridPane.margin>
+                        <Insets right="105.0" />
+                     </GridPane.margin>
+                  </Button>
+                  <Button fx:id="btnPlayZhumyrQylysh" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#playKui" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #fff; -fx-background-radius: 10em;" textFill="#c6303f" GridPane.rowIndex="3">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../res/images/icons/iconPlay.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <GridPane.margin>
+                        <Insets right="105.0" />
+                     </GridPane.margin>
+                  </Button>
+                  <Button fx:id="btnPlayAta" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#playKui" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #fff; -fx-background-radius: 10em;" textFill="#c6303f" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../res/images/icons/iconPlay.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <GridPane.margin>
+                        <Insets right="105.0" />
+                     </GridPane.margin>
+                  </Button>
+                  <Button fx:id="btnPlayErke" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#playKui" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #fff; -fx-background-radius: 10em;" textFill="#c6303f" GridPane.rowIndex="4">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../res/images/icons/iconPlay.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <GridPane.margin>
+                        <Insets right="105.0" />
+                     </GridPane.margin>
+                  </Button>
+                  <Button fx:id="btnPlayAlqisa" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#playKui" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #fff; -fx-background-radius: 10em;" textFill="#c6303f" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../res/images/icons/iconPlay.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <GridPane.margin>
+                        <Insets right="105.0" />
+                     </GridPane.margin>
+                  </Button>
+               </children>
+            </GridPane>
+            <AnchorPane fx:id="anchorPaneKuis" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="840.0" style="-fx-background-color: #fff;" visible="false">
+               <children>
+                  <VBox fx:id="paneKui0" alignment="TOP_CENTER" prefHeight="0.0" prefWidth="840.0" visible="false">
+                     <children>
+                        <Label alignment="CENTER" contentDisplay="CENTER" text="Сарыарқа" textAlignment="CENTER">
+                           <font>
+                              <Font name="Times New Roman Bold Italic" size="24.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                        </Label>
+                        <ImageView fitWidth="800.0" pickOnBounds="true" preserveRatio="true">
+                           <VBox.margin>
+                              <Insets bottom="10.0" top="10.0" />
+                           </VBox.margin>
+                           <image>
+                              <Image url="@../res/images/notes/saryarqa/saryarqa1.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </VBox>
+                  <VBox fx:id="paneKui1" alignment="TOP_CENTER" prefHeight="200.0" prefWidth="840.0" visible="false">
+                     <children>
+                        <Label alignment="CENTER" contentDisplay="CENTER" text="Көроғлы" textAlignment="CENTER">
+                           <font>
+                              <Font name="Times New Roman Bold Italic" size="24.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                        </Label>
+                        <ImageView fitWidth="800.0" pickOnBounds="true" preserveRatio="true">
+                           <VBox.margin>
+                              <Insets bottom="10.0" top="10.0" />
+                           </VBox.margin>
+                           <image>
+                              <Image url="@../res/images/notes/balbyrauyn/balbyrauyn1.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </VBox>
+                  <VBox fx:id="paneKui2" alignment="TOP_CENTER" prefHeight="0.0" prefWidth="840.0" visible="false">
+                     <children>
+                        <Label alignment="CENTER" contentDisplay="CENTER" text="Кеңес" textAlignment="CENTER">
+                           <font>
+                              <Font name="Times New Roman Bold Italic" size="24.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                        </Label>
+                        <ImageView fitWidth="800.0" pickOnBounds="true" preserveRatio="true">
+                           <VBox.margin>
+                              <Insets bottom="10.0" top="10.0" />
+                           </VBox.margin>
+                           <image>
+                              <Image url="@../res/images/notes/balbyrauyn/balbyrauyn1.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </VBox>
+                  <VBox fx:id="paneKui3" alignment="TOP_CENTER" prefHeight="0.0" prefWidth="840.0" visible="false">
+                     <children>
+                        <Label alignment="CENTER" contentDisplay="CENTER" text="Көңіл ашар" textAlignment="CENTER">
+                           <font>
+                              <Font name="Times New Roman Bold Italic" size="24.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                        </Label>
+                        <ImageView fitWidth="800.0" pickOnBounds="true" preserveRatio="true">
+                           <VBox.margin>
+                              <Insets bottom="10.0" top="10.0" />
+                           </VBox.margin>
+                           <image>
+                              <Image url="@../res/images/notes/balbyrauyn/balbyrauyn1.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </VBox>
+                  <VBox fx:id="paneKui4" alignment="TOP_CENTER" prefHeight="0.0" prefWidth="840.0" visible="false">
+                     <children>
+                        <Label alignment="CENTER" contentDisplay="CENTER" text="Адай" textAlignment="CENTER">
+                           <font>
+                              <Font name="Times New Roman Bold Italic" size="24.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                        </Label>
+                        <ImageView fitWidth="800.0" pickOnBounds="true" preserveRatio="true">
+                           <VBox.margin>
+                              <Insets bottom="10.0" top="10.0" />
+                           </VBox.margin>
+                           <image>
+                              <Image url="@../res/images/notes/balbyrauyn/balbyrauyn1.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </VBox>
+                  <VBox fx:id="paneKui5" alignment="TOP_CENTER" prefHeight="200.0" prefWidth="840.0" visible="false">
+                     <children>
+                        <Label alignment="CENTER" contentDisplay="CENTER" text="Балбырауын" textAlignment="CENTER">
+                           <font>
+                              <Font name="Times New Roman Bold Italic" size="24.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                        </Label>
+                        <ImageView fitWidth="800.0" pickOnBounds="true" preserveRatio="true">
+                           <VBox.margin>
+                              <Insets bottom="10.0" top="10.0" />
+                           </VBox.margin>
+                           <image>
+                              <Image url="@../res/images/notes/balbyrauyn/balbyrauyn1.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitWidth="800.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../res/images/notes/balbyrauyn/balbyrauyn2.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </VBox>
+                  <VBox fx:id="paneKui6" alignment="TOP_CENTER" prefHeight="0.0" prefWidth="840.0" visible="false">
+                     <children>
+                        <Label alignment="CENTER" contentDisplay="CENTER" text="Жұмыр қылыш" textAlignment="CENTER">
+                           <font>
+                              <Font name="Times New Roman Bold Italic" size="24.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                        </Label>
+                        <ImageView fitWidth="800.0" pickOnBounds="true" preserveRatio="true">
+                           <VBox.margin>
+                              <Insets bottom="10.0" top="10.0" />
+                           </VBox.margin>
+                           <image>
+                              <Image url="@../res/images/notes/balbyrauyn/balbyrauyn1.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </VBox>
+                  <VBox fx:id="paneKui7" alignment="TOP_CENTER" prefWidth="840.0" visible="false">
+                     <children>
+                        <Label alignment="CENTER" contentDisplay="CENTER" text="Ата толғауы" textAlignment="CENTER">
+                           <font>
+                              <Font name="Times New Roman Bold Italic" size="24.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                        </Label>
+                        <ImageView fitWidth="800.0" pickOnBounds="true" preserveRatio="true">
+                           <VBox.margin>
+                              <Insets bottom="10.0" top="10.0" />
+                           </VBox.margin>
+                           <image>
+                              <Image url="@../res/images/notes/balbyrauyn/balbyrauyn1.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </VBox>
+                  <VBox fx:id="paneKui8" alignment="TOP_CENTER" prefHeight="0.0" prefWidth="840.0" visible="false">
+                     <children>
+                        <Label alignment="CENTER" contentDisplay="CENTER" text="Ерке сылқым" textAlignment="CENTER">
+                           <font>
+                              <Font name="Times New Roman Bold Italic" size="24.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                        </Label>
+                        <ImageView fitWidth="800.0" pickOnBounds="true" preserveRatio="true">
+                           <VBox.margin>
+                              <Insets bottom="10.0" top="10.0" />
+                           </VBox.margin>
+                           <image>
+                              <Image url="@../res/images/notes/balbyrauyn/balbyrauyn1.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </VBox>
+                  <VBox fx:id="paneKui9" alignment="TOP_CENTER" prefHeight="0.0" prefWidth="840.0" visible="false">
+                     <children>
+                        <Label alignment="CENTER" contentDisplay="CENTER" text="Әлқиса" textAlignment="CENTER">
+                           <font>
+                              <Font name="Times New Roman Bold Italic" size="24.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                        </Label>
+                        <ImageView fitWidth="800.0" pickOnBounds="true" preserveRatio="true">
+                           <VBox.margin>
+                              <Insets bottom="10.0" top="10.0" />
+                           </VBox.margin>
+                           <image>
+                              <Image url="@../res/images/notes/balbyrauyn/balbyrauyn1.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+         </children>
+      </Pane>
+      <GridPane fx:id="paneTuner" GridPane.columnIndex="1">
+         <columnConstraints>
+            <ColumnConstraints fillWidth="false" halignment="CENTER" hgrow="NEVER" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="420.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="420.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="300.0" valignment="CENTER" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="300.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <ImageView fitHeight="600.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1">
+               <GridPane.margin>
+                  <Insets top="300.0" />
+               </GridPane.margin>
+               <image>
+                  <Image url="@../res/images/qulaq-01.png" />
+               </image>
+            </ImageView>
+            <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="72.0" prefWidth="250.0">
+               <GridPane.margin>
+                  <Insets top="50.0" />
+               </GridPane.margin>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <children>
+                  <Button fx:id="btnTunerTop" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#tune" prefHeight="72.0" prefWidth="250.0" style="-fx-background-radius: 3em; -fx-background-color: #E98937;" text="    Үстінгі" textFill="WHITE">
+                     <font>
+                        <Font name="Times New Roman Bold Italic" size="32.0" />
+                     </font>
+                  </Button>
+                  <Circle fx:id="topCircle" fill="#8ab54b" layoutX="32.0" layoutY="36.0" radius="22.0" smooth="false" stroke="#e98937" strokeType="INSIDE" />
+               </children>
+            </Pane>
+            <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="72.0" prefWidth="250.0" GridPane.rowIndex="1">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <GridPane.margin>
+                  <Insets bottom="50.0" />
+               </GridPane.margin>
+               <children>
+                  <Button fx:id="btnTunerBottom" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#tune" prefHeight="72.0" prefWidth="250.0" style="-fx-background-radius: 3em; -fx-background-color: #E98937;" text="Астынғы" textFill="WHITE">
+                     <font>
+                        <Font name="Times New Roman Bold Italic" size="32.0" />
+                     </font>
+                     <padding>
+                        <Insets left="45.0" />
+                     </padding>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Circle fx:id="bottomCircle" fill="#8ab54b" layoutX="32.0" layoutY="36.0" radius="22.0" stroke="#e98937" strokeType="INSIDE" />
+               </children>
+            </Pane>
+         </children>
+      </GridPane>
+      <GridPane fx:id="paneEmulator" visible="false" GridPane.columnIndex="1">
+         <columnConstraints>
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="BOTTOM" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="130.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="TOP" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <ImageView fitHeight="170.0" fitWidth="840.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets />
+               </GridPane.margin>
+               <image>
+                  <Image url="@../res/images/moiyn.png" />
+               </image>
+            </ImageView>
+            <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="790.0">
+               <GridPane.margin>
+                  <Insets right="20.0" />
+               </GridPane.margin>
+               <children>
+                  <Button fx:id="btnTop19" mnemonicParsing="false" onAction="#playVoice" onKeyPressed="#keyPlay" prefHeight="30.0" prefWidth="32.0" style="-fx-background-radius: 10em; -fx-background-color: #fff;" text="19">
+                     <font>
+                        <Font name="Times New Roman Bold Italic" size="17.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="-5.0" left="-5.0" right="-5.0" top="-5.0" />
+                     </padding>
+                     <HBox.margin>
+                        <Insets right="5.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="btnTop18" mnemonicParsing="false" onAction="#playVoice" onKeyPressed="#keyPlay" prefHeight="30.0" prefWidth="32.0" style="-fx-background-radius: 10em; -fx-background-color: #fff;" text="18">
+                     <font>
+                        <Font name="Times New Roman Bold Italic" size="17.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="-5.0" left="-5.0" right="-5.0" top="-5.0" />
+                     </padding>
+                     <HBox.margin>
+                        <Insets right="5.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="btnTop17" mnemonicParsing="false" onAction="#playVoice" onKeyPressed="#keyPlay" prefHeight="30.0" prefWidth="32.0" style="-fx-background-radius: 10em; -fx-background-color: #fff;" text="17">
+                     <font>
+                        <Font name="Times New Roman Bold Italic" size="17.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="-5.0" left="-5.0" right="-5.0" top="-5.0" />
+                     </padding>
+                     <HBox.margin>
+                        <Insets right="5.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="btnTop16" mnemonicParsing="false" onAction="#playVoice" onKeyPressed="#keyPlay" prefHeight="30.0" prefWidth="32.0" style="-fx-background-radius: 10em; -fx-background-color: #fff;" text="16">
+                     <font>
+                        <Font name="Times New Roman Bold Italic" size="17.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="-5.0" left="-5.0" right="-5.0" top="-5.0" />
+                     </padding>
+                     <HBox.margin>
+                        <Insets right="5.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="btnTop15" mnemonicParsing="false" onAction="#playVoice" onKeyPressed="#keyPlay" prefHeight="30.0" prefWidth="32.0" style="-fx-background-radius: 10em; -fx-background-color: #fff;" text="15">
+                     <font>
+                        <Font name="Times New Roman Bold Italic" size="17.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="-5.0" left="-5.0" right="-5.0" top="-5.0" />
+                     </padding>
+                     <HBox.margin>
+                        <Insets right="5.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="btnTop14" mnemonicParsing="false" onAction="#playVoice" onKeyPressed="#keyPlay" prefHeight="30.0" prefWidth="32.0" style="-fx-background-radius: 10em; -fx-background-color: #fff;" text="14">
+                     <font>
+                        <Font name="Times New Roman Bold Italic" size="17.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="-5.0" left="-5.0" right="-5.0" top="-5.0" />
+                     </padding>
+                     <HBox.margin>
+                        <Insets right="5.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="btnTop13" mnemonicParsing="false" onAction="#playVoice" onKeyPressed="#keyPlay" prefHeight="30.0" prefWidth="32.0" style="-fx-background-radius: 10em; -fx-background-color: #fff;" text="13">
+                     <font>
+                        <Font name="Times New Roman Bold Italic" size="17.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="-5.0" left="-5.0" right="-5.0" top="-5.0" />
+                     </padding>
+                     <HBox.margin>
+                        <Insets right="5.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="btnTop12" mnemonicParsing="false" onAction="#playVoice" onKeyPressed="#keyPlay" prefHeight="30.0" prefWidth="32.0" style="-fx-background-radius: 10em; -fx-background-color: #fff;" text="12">
+                     <font>
+                        <Font name="Times New Roman Bold Italic" size="17.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="-5.0" left="-5.0" right="-5.0" top="-5.0" />
+                     </padding>
+                     <HBox.margin>
+                        <Insets right="5.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="btnTop11" mnemonicParsing="false" onAction="#playVoice" onKeyPressed="#keyPlay" prefHeight="30.0" prefWidth="32.0" style="-fx-background-radius: 10em; -fx-background-color: #fff;" text="11">
+                     <font>
+                        <Font name="Times New Roman Bold Italic" size="17.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="-5.0" left="-5.0" right="-5.0" top="-5.0" />
+                     </padding>
+                     <HBox.margin>
+                        <Insets right="5.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="btnTop10" mnemonicParsing="false" onAction="#playVoice" onKeyPressed="#keyPlay" prefHeight="30.0" prefWidth="32.0" style="-fx-background-radius: 10em; -fx-background-color: #fff;" text="10">
+                     <font>
+                        <Font name="Times New Roman Bold Italic" size="17.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="-5.0" left="-5.0" right="-5.0" top="-5.0" />
+                     </padding>
+                     <HBox.margin>
+                        <Insets right="5.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="btnTop9" mnemonicParsing="false" onAction="#playVoice" onKeyPressed="#keyPlay" prefHeight="30.0" prefWidth="32.0" style="-fx-background-radius: 10em; -fx-background-color: #fff;" text="9">
+                     <font>
+                        <Font name="Times New Roman Bold Italic" size="17.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="-5.0" left="-5.0" right="-5.0" top="-5.0" />
+                     </padding>
+                     <HBox.margin>
+                        <Insets right="5.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="btnTop8" mnemonicParsing="false" onAction="#playVoice" onKeyPressed="#keyPlay" prefHeight="30.0" prefWidth="32.0" style="-fx-background-radius: 10em; -fx-background-color: #fff;" text="8">
+                     <font>
+                        <Font name="Times New Roman Bold Italic" size="17.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="-5.0" left="-5.0" right="-5.0" top="-5.0" />
+                     </padding>
+                     <HBox.margin>
+                        <Insets right="5.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="btnTop7" mnemonicParsing="false" onAction="#playVoice" onKeyPressed="#keyPlay" prefHeight="30.0" prefWidth="32.0" style="-fx-background-radius: 10em; -fx-background-color: #fff;" text="7">
+                     <font>
+                        <Font name="Times New Roman Bold Italic" size="17.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="-5.0" left="-5.0" right="-5.0" top="-5.0" />
+                     </padding>
+                     <HBox.margin>
+                        <Insets right="5.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="btnTop6" mnemonicParsing="false" onAction="#playVoice" onKeyPressed="#keyPlay" prefHeight="30.0" prefWidth="32.0" style="-fx-background-radius: 10em; -fx-background-color: #fff;" text="6">
+                     <font>
+                        <Font name="Times New Roman Bold Italic" size="17.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="-5.0" left="-5.0" right="-5.0" top="-5.0" />
+                     </padding>
+                     <HBox.margin>
+                        <Insets right="5.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="btnTop5" mnemonicParsing="false" onAction="#playVoice" onKeyPressed="#keyPlay" prefHeight="30.0" prefWidth="32.0" style="-fx-background-radius: 10em; -fx-background-color: #fff;" text="5">
+                     <font>
+                        <Font name="Times New Roman Bold Italic" size="17.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="-5.0" left="-5.0" right="-5.0" top="-5.0" />
+                     </padding>
+                     <HBox.margin>
+                        <Insets right="5.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="btnTop4" mnemonicParsing="false" onAction="#playVoice" onKeyPressed="#keyPlay" prefHeight="30.0" prefWidth="32.0" style="-fx-background-radius: 10em; -fx-background-color: #fff;" text="4">
+                     <font>
+                        <Font name="Times New Roman Bold Italic" size="17.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="-5.0" left="-5.0" right="-5.0" top="-5.0" />
+                     </padding>
+                     <HBox.margin>
+                        <Insets right="5.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="btnTop3" mnemonicParsing="false" onAction="#playVoice" onKeyPressed="#keyPlay" prefHeight="30.0" prefWidth="32.0" style="-fx-background-radius: 10em; -fx-background-color: #fff;" text="3">
+                     <font>
+                        <Font name="Times New Roman Bold Italic" size="17.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="-5.0" left="-5.0" right="-5.0" top="-5.0" />
+                     </padding>
+                     <HBox.margin>
+                        <Insets right="5.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="btnTop2" mnemonicParsing="false" onAction="#playVoice" onKeyPressed="#keyPlay" prefHeight="30.0" prefWidth="32.0" style="-fx-background-radius: 10em; -fx-background-color: #fff;" text="2">
+                     <font>
+                        <Font name="Times New Roman Bold Italic" size="17.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="-5.0" left="-5.0" right="-5.0" top="-5.0" />
+                     </padding>
+                     <HBox.margin>
+                        <Insets right="5.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="btnTop1" mnemonicParsing="false" onAction="#playVoice" onKeyPressed="#keyPlay" prefHeight="30.0" prefWidth="32.0" style="-fx-background-radius: 10em; -fx-background-color: #fff;" text="1">
+                     <font>
+                        <Font name="Times New Roman Bold Italic" size="17.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="-5.0" left="-5.0" right="-5.0" top="-5.0" />
+                     </padding>
+                     <HBox.margin>
+                        <Insets right="5.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="btnTop0" mnemonicParsing="false" onAction="#playVoice" onKeyPressed="#keyPlay" prefHeight="30.0" prefWidth="32.0" style="-fx-background-radius: 10em; -fx-background-color: #fff;" text="0">
+                     <font>
+                        <Font name="Times New Roman Bold Italic" size="17.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="-5.0" left="-5.0" right="-5.0" top="-5.0" />
+                     </padding>
+                     <HBox.margin>
+                        <Insets right="5.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+            <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="790.0" GridPane.rowIndex="2">
+               <GridPane.margin>
+                  <Insets right="20.0" />
+               </GridPane.margin>
+               <children>
+                  <Button fx:id="btnBottom19" mnemonicParsing="false" onAction="#playVoice" onKeyPressed="#keyPlay" prefHeight="30.0" prefWidth="32.0" style="-fx-background-radius: 10em; -fx-background-color: #fff;" text="19">
+                     <font>
+                        <Font name="Times New Roman Bold Italic" size="17.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="-5.0" left="-5.0" right="-5.0" top="-5.0" />
+                     </padding>
+                     <HBox.margin>
+                        <Insets right="5.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="btnBottom18" mnemonicParsing="false" onAction="#playVoice" onKeyPressed="#keyPlay" prefHeight="30.0" prefWidth="32.0" style="-fx-background-radius: 10em; -fx-background-color: #fff;" text="18">
+                     <font>
+                        <Font name="Times New Roman Bold Italic" size="17.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="-5.0" left="-5.0" right="-5.0" top="-5.0" />
+                     </padding>
+                     <HBox.margin>
+                        <Insets right="5.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="btnBottom17" mnemonicParsing="false" onAction="#playVoice" onKeyPressed="#keyPlay" prefHeight="30.0" prefWidth="32.0" style="-fx-background-radius: 10em; -fx-background-color: #fff;" text="17">
+                     <font>
+                        <Font name="Times New Roman Bold Italic" size="17.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="-5.0" left="-5.0" right="-5.0" top="-5.0" />
+                     </padding>
+                     <HBox.margin>
+                        <Insets right="5.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="btnBottom16" mnemonicParsing="false" onAction="#playVoice" onKeyPressed="#keyPlay" prefHeight="30.0" prefWidth="32.0" style="-fx-background-radius: 10em; -fx-background-color: #fff;" text="16">
+                     <font>
+                        <Font name="Times New Roman Bold Italic" size="17.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="-5.0" left="-5.0" right="-5.0" top="-5.0" />
+                     </padding>
+                     <HBox.margin>
+                        <Insets right="5.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="btnBottom15" mnemonicParsing="false" onAction="#playVoice" onKeyPressed="#keyPlay" prefHeight="30.0" prefWidth="32.0" style="-fx-background-radius: 10em; -fx-background-color: #fff;" text="15">
+                     <font>
+                        <Font name="Times New Roman Bold Italic" size="17.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="-5.0" left="-5.0" right="-5.0" top="-5.0" />
+                     </padding>
+                     <HBox.margin>
+                        <Insets right="5.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="btnBottom14" mnemonicParsing="false" onAction="#playVoice" onKeyPressed="#keyPlay" prefHeight="30.0" prefWidth="32.0" style="-fx-background-radius: 10em; -fx-background-color: #fff;" text="14">
+                     <font>
+                        <Font name="Times New Roman Bold Italic" size="17.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="-5.0" left="-5.0" right="-5.0" top="-5.0" />
+                     </padding>
+                     <HBox.margin>
+                        <Insets right="5.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="btnBottom13" mnemonicParsing="false" onAction="#playVoice" onKeyPressed="#keyPlay" prefHeight="30.0" prefWidth="32.0" style="-fx-background-radius: 10em; -fx-background-color: #fff;" text="13">
+                     <font>
+                        <Font name="Times New Roman Bold Italic" size="17.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="-5.0" left="-5.0" right="-5.0" top="-5.0" />
+                     </padding>
+                     <HBox.margin>
+                        <Insets right="5.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="btnBottom12" mnemonicParsing="false" onAction="#playVoice" onKeyPressed="#keyPlay" prefHeight="30.0" prefWidth="32.0" style="-fx-background-radius: 10em; -fx-background-color: #fff;" text="12">
+                     <font>
+                        <Font name="Times New Roman Bold Italic" size="17.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="-5.0" left="-5.0" right="-5.0" top="-5.0" />
+                     </padding>
+                     <HBox.margin>
+                        <Insets right="5.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="btnBottom11" mnemonicParsing="false" onAction="#playVoice" onKeyPressed="#keyPlay" prefHeight="30.0" prefWidth="32.0" style="-fx-background-radius: 10em; -fx-background-color: #fff;" text="11">
+                     <font>
+                        <Font name="Times New Roman Bold Italic" size="17.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="-5.0" left="-5.0" right="-5.0" top="-5.0" />
+                     </padding>
+                     <HBox.margin>
+                        <Insets right="5.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="btnBottom10" mnemonicParsing="false" onAction="#playVoice" onKeyPressed="#keyPlay" prefHeight="30.0" prefWidth="32.0" style="-fx-background-radius: 10em; -fx-background-color: #fff;" text="10">
+                     <font>
+                        <Font name="Times New Roman Bold Italic" size="17.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="-5.0" left="-5.0" right="-5.0" top="-5.0" />
+                     </padding>
+                     <HBox.margin>
+                        <Insets right="5.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="btnBottom9" mnemonicParsing="false" onAction="#playVoice" onKeyPressed="#keyPlay" prefHeight="30.0" prefWidth="32.0" style="-fx-background-radius: 10em; -fx-background-color: #fff;" text="9">
+                     <font>
+                        <Font name="Times New Roman Bold Italic" size="17.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="-5.0" left="-5.0" right="-5.0" top="-5.0" />
+                     </padding>
+                     <HBox.margin>
+                        <Insets right="5.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="btnBottom8" mnemonicParsing="false" onAction="#playVoice" onKeyPressed="#keyPlay" prefHeight="30.0" prefWidth="32.0" style="-fx-background-radius: 10em; -fx-background-color: #fff;" text="8">
+                     <font>
+                        <Font name="Times New Roman Bold Italic" size="17.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="-5.0" left="-5.0" right="-5.0" top="-5.0" />
+                     </padding>
+                     <HBox.margin>
+                        <Insets right="5.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="btnBottom7" mnemonicParsing="false" onAction="#playVoice" onKeyPressed="#keyPlay" prefHeight="30.0" prefWidth="32.0" style="-fx-background-radius: 10em; -fx-background-color: #fff;" text="7">
+                     <font>
+                        <Font name="Times New Roman Bold Italic" size="17.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="-5.0" left="-5.0" right="-5.0" top="-5.0" />
+                     </padding>
+                     <HBox.margin>
+                        <Insets right="5.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="btnBottom6" mnemonicParsing="false" onAction="#playVoice" onKeyPressed="#keyPlay" prefHeight="30.0" prefWidth="32.0" style="-fx-background-radius: 10em; -fx-background-color: #fff;" text="6">
+                     <font>
+                        <Font name="Times New Roman Bold Italic" size="17.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="-5.0" left="-5.0" right="-5.0" top="-5.0" />
+                     </padding>
+                     <HBox.margin>
+                        <Insets right="5.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="btnBottom5" mnemonicParsing="false" onAction="#playVoice" onKeyPressed="#keyPlay" prefHeight="30.0" prefWidth="32.0" style="-fx-background-radius: 10em; -fx-background-color: #fff;" text="5">
+                     <font>
+                        <Font name="Times New Roman Bold Italic" size="17.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="-5.0" left="-5.0" right="-5.0" top="-5.0" />
+                     </padding>
+                     <HBox.margin>
+                        <Insets right="5.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="btnBottom4" mnemonicParsing="false" onAction="#playVoice" onKeyPressed="#keyPlay" prefHeight="30.0" prefWidth="32.0" style="-fx-background-radius: 10em; -fx-background-color: #fff;" text="4">
+                     <font>
+                        <Font name="Times New Roman Bold Italic" size="17.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="-5.0" left="-5.0" right="-5.0" top="-5.0" />
+                     </padding>
+                     <HBox.margin>
+                        <Insets right="5.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="btnBottom3" mnemonicParsing="false" onAction="#playVoice" onKeyPressed="#keyPlay" prefHeight="30.0" prefWidth="32.0" style="-fx-background-radius: 10em; -fx-background-color: #fff;" text="3">
+                     <font>
+                        <Font name="Times New Roman Bold Italic" size="17.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="-5.0" left="-5.0" right="-5.0" top="-5.0" />
+                     </padding>
+                     <HBox.margin>
+                        <Insets right="5.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="btnBottom2" mnemonicParsing="false" onAction="#playVoice" onKeyPressed="#keyPlay" prefHeight="30.0" prefWidth="32.0" style="-fx-background-radius: 10em; -fx-background-color: #fff;" text="2">
+                     <font>
+                        <Font name="Times New Roman Bold Italic" size="17.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="-5.0" left="-5.0" right="-5.0" top="-5.0" />
+                     </padding>
+                     <HBox.margin>
+                        <Insets right="5.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="btnBottom1" mnemonicParsing="false" onAction="#playVoice" onKeyPressed="#keyPlay" prefHeight="30.0" prefWidth="32.0" style="-fx-background-radius: 10em; -fx-background-color: #fff;" text="1">
+                     <font>
+                        <Font name="Times New Roman Bold Italic" size="17.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="-5.0" left="-5.0" right="-5.0" top="-5.0" />
+                     </padding>
+                     <HBox.margin>
+                        <Insets right="5.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="btnBottom0" mnemonicParsing="false" onAction="#playVoice" onKeyPressed="#keyPlay" prefHeight="30.0" prefWidth="32.0" style="-fx-background-radius: 10em; -fx-background-color: #fff;" text="0">
+                     <font>
+                        <Font name="Times New Roman Bold Italic" size="17.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="-5.0" left="-5.0" right="-5.0" top="-5.0" />
+                     </padding>
+                     <HBox.margin>
+                        <Insets right="5.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+      </GridPane>
+      <HBox fx:id="panePlayer" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" style="-fx-background-color: #242424;" visible="false" GridPane.columnIndex="1">
+         <GridPane.margin>
+            <Insets top="550.0" />
+         </GridPane.margin>
+         <children>
+            <Button alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#goBack" prefHeight="48.0" prefWidth="50.0" style="-fx-background-color: #242424;" text="&lt;" textFill="WHITE">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <font>
+                  <Font name="System Bold" size="32.0" />
+               </font>
+               <padding>
+                  <Insets bottom="-5.0" left="-5.0" right="-5.0" top="-5.0" />
+               </padding>
+            </Button>
+            <Label fx:id="label1" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="30.0" text="00:00" textFill="WHITE">
+               <font>
+                  <Font name="Times New Roman Italic" size="12.0" />
+               </font>
+            </Label>
+            <Slider fx:id="slider" minWidth="-Infinity" prefHeight="10.0" prefWidth="640.0" style="-fx-background-color: #242424;">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Slider>
+            <Label fx:id="label2" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="30.0" text="00:00" textFill="WHITE">
+               <font>
+                  <Font name="Times New Roman Italic" size="12.0" />
+               </font>
+            </Label>
+            <Button fx:id="btnPlay" alignment="CENTER" contentDisplay="CENTER" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#playMusic" prefHeight="48.0" prefWidth="50.0" style="-fx-background-color: #242424;" text="|&gt;" textFill="WHITE">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <font>
+                  <Font size="19.0" />
+               </font>
+               <padding>
+                  <Insets left="4.0" />
+               </padding>
+            </Button>
+         </children>
+      </HBox>
+   </children>
+</GridPane>
